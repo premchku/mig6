@@ -18,13 +18,17 @@ Tue Jun 23 02:01:27 UTC 2020--><server>
     <variable name="tomcatServerRuntimeDirectory" value="${shared.config.dir}/lib/global/D:\Software\apachetomcat8.5.55windowsx64\apachetomcat8.5.55">
 </variable>
 
-<dataSource id="DefaultDataSource" jndiName="jdbc/myapp" jdbcDriverRef="mysql-driver"
-                type="javax.sql.ConnectionPoolDataSource" transactional="true">
+<dataSource id="myappMySQLLib" jndiName="jdbc/myapp">
+        <jdbcDriver>
+            <library>
+                <fileset dir="${shared.config.dir}/lib/global" includes="*.jar"/>
+            </library>
+        </jdbcDriver>
+        <properties URL="jdbc:mysql://172.21.108.78:3306/prem"/>
+        <containerAuthData password="prem" user="prem"/>
+        <connectionManager connectionTimeout="10s" maxPoolSize="100" minPoolSize="20"/>
+    </dataSource>
 
-        <properties url="jdbc:mysql://172.21.108.78:3306/prem"
-                    user="prem"
-                    password="Prem"/>
-		</dataSource>
     <httpSession/>
     <mimeTypes>
         <type>123=application/vnd.lotus-1-2-3</type>
