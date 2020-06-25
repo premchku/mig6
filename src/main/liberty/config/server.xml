@@ -11,14 +11,14 @@ Tue Jun 23 02:01:27 UTC 2020--><server>
     <applicationManager autoExpand="true"/>
     <!-- <variable name="tomcatServerConfDirectory" value="D:\Software\apache-tomcat-8.5.55-windows-x64\apache-tomcat-8.5.55\conf">
 </variable> -->
-    <variable name="tomcatServerConfDirectory" value="${shared.config.dir}/lib/global/D:\Software\apachetomcat8.5.55windowsx64\apachetomcat8.5.55\conf">
+    <variable name="tomcatServerConfDirectory" value="${shared.config.dir}/lib/global/">
 </variable>
     <!-- <variable name="tomcatServerRuntimeDirectory" value="D:\Software\apache-tomcat-8.5.55-windows-x64\apache-tomcat-8.5.55">
 </variable> -->
-    <variable name="tomcatServerRuntimeDirectory" value="${shared.config.dir}/lib/global/D:\Software\apachetomcat8.5.55windowsx64\apachetomcat8.5.55">
+    <variable name="tomcatServerRuntimeDirectory" value="${shared.config.dir}/lib/global/">
 </variable>
 
-<dataSource id="myappMySQLLib" jndiName="jdbc/myapp">
+   <dataSource id="myappMySQLLib" jndiName="jdbc/myapp">
         <jdbcDriver>
             <library>
                 <fileset dir="${shared.config.dir}/lib/global" includes="*.jar"/>
